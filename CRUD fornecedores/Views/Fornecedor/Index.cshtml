@@ -1,0 +1,30 @@
+﻿@model List<Fornecedor>
+<h2>Lista de Fornecedores</h2>
+<a href="@Url.Action("Create")">Criar Novo</a>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Produto</th>
+            <th>Email</th>
+            <th>CNPJ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var fornecedor in Model)
+        {
+            <tr>
+                <td>@fornecedor.Id</td>
+                <td>@fornecedor.Name</td>
+                <td>@fornecedor.Produto</td>
+                <td>@fornecedor.Email</td>
+                <td>@fornecedor.CNPJ</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = fornecedor.Id })">Editar</a> |
+                    <a href="@Url.Action("Delete", new { id = fornecedor.Id })">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

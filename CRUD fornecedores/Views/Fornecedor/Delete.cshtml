@@ -1,0 +1,13 @@
+﻿@model Fornecedor
+<h2>Excluir Fornecedor</h2>
+<p>Tem certeza de que deseja excluir este fornecedor?</p>
+<ul>
+    <li>Nome: @Model.Name</li>
+    <li>Produto: @Model.Produto</li>
+    <li>Email: @Model.Email</li>
+    <li>CNPJ: @Model.CNPJ</li>
+</ul>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Excluir</button>
+</form>
