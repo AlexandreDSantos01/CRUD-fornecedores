@@ -8,9 +8,13 @@ namespace CRUD_fornecedores.Controllers
 {
     public class FornecedorController : Controller
     {
-        private static List<Fornecedor> fornecedores = new List<Fornecedor>();
+        private static List<Fornecedor> fornecedores = new List<Fornecedor>
+        {
+        new Fornecedor { Id = 1, Name = "Fornecedor 1", Produto = "Produto A", Email = "email1@exemplo.com", CNPJ = "12.345.678/0001-90" },
+        new Fornecedor { Id = 2, Name = "Fornecedor 2", Produto = "Produto B", Email = "email2@exemplo.com", CNPJ = "98.765.432/0001-10" }
+    };
 
-        public IActionResult Index()
+public IActionResult Index()
         {
             return View(fornecedores);
         }

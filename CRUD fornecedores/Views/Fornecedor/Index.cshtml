@@ -1,30 +1,103 @@
-﻿@model List<Fornecedor>
+﻿@model IEnumerable<Fornecedor>
+
 <h2>Lista de Fornecedores</h2>
-<a href="@Url.Action("Create")">Criar Novo</a>
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Produto</th>
-            <th>Email</th>
-            <th>CNPJ</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var fornecedor in Model)
-        {
-            <tr>
-                <td>@fornecedor.Id</td>
-                <td>@fornecedor.Name</td>
-                <td>@fornecedor.Produto</td>
-                <td>@fornecedor.Email</td>
-                <td>@fornecedor.CNPJ</td>
-                <td>
-                    <a href="@Url.Action("Edit", new { id = fornecedor.Id })">Editar</a> |
-                    <a href="@Url.Action("Delete", new { id = fornecedor.Id })">Excluir</a>
-                </td>
-            </tr>
+
+<a href="@Url.Action("Create")" class="btn-adicionar">Adicionar Fornecedor</a>
+
+<div class="grid-container">
+    @foreach (var fornecedor in Model)
+    {
+        <div class="grid-item">
+            <h3>@fornecedor.Name</h3>
+            <p><strong>Produto:</strong> @fornecedor.Produto</p>
+            <p><strong>Email:</strong> @fornecedor.Email</p>
+            <p><strong>CNPJ:</strong> @fornecedor.CNPJ</p>
+            <div>
+                <a href="@Url.Action("Edit", new { id = fornecedor.Id })">Editar</a> |
+                <a href="@Url.Action("Delete", new { id = fornecedor.Id })">Excluir</a>
+            </div>
+        </div>
+    }
+</div>
+
+@section Styles {
+    <style>
+
+        body {
+            background: radial-gradient(circle, #004aad, #5ce1e6); /* Degradê no fundo */
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
-    </tbody>
-</table>
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            margin-top: 80px; /* Espaço para descer o título abaixo do navbar */
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+            .grid-item h3 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+
+            .grid-item p {
+                font-size: 1em;
+                margin: 5px 0;
+            }
+
+            .grid-item strong {
+                font-weight: bold;
+            }
+
+            .grid-item a {
+                text-decoration: none;
+                color: #007bff;
+                font-weight: bold;
+            }
+
+                .grid-item a:hover {
+                    color: #0056b3;
+                }
+
+        /* CSS do botão de adicionar */
+        .btn-adicionar {
+            background-color: white; /* Fundo branco */
+            color: #004aad; /* Cor do texto */
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid #000000; /* Borda preta */
+            border-radius: 5px;
+            text-decoration: none; /* Remove a linha de foco */
+            display: inline-block; /* Para o botão não quebrar linha */
+            margin: 20px 0;
+        }
+
+            .btn-adicionar:hover {
+                background-color: #f2f2f2; /* Fundo claro quando passa o mouse */
+                border-color: #004aad; /* Borda de cor azul */
+                color: #004aad; /* Cor do texto fica azul */
+            }
+
+            .btn-adicionar:hover {
+                background: #e7e6e7); /* Gradiente mais escuro ao passar o mouse */
+            }
+    </style>
+}

@@ -1,5 +1,14 @@
 ﻿@model Fornecedor
 
+
+@section Styles {
+    <style>
+        body {
+            background: radial-gradient(circle, #004aad, #5ce1e6); /* Degradê */
+        }
+    </style>
+}
+
 <div class="form-container">
     <h2>Adicionar Fornecedor</h2>
     <form asp-action="Create" method="post">
