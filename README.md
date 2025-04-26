@@ -18,3 +18,7 @@ Este é um projeto de um sistema CRUD (Criar, Ler, Atualizar, Excluir) para gere
 - **SQL Server**: Banco de dados utilizado para armazenar as informações dos fornecedores.
 - **HTML/CSS**: Para estruturação e estilização das páginas web.
 
+- ## Mais Projetos
+
+Veja mais projetos desenvolvidos em meu portfólio [aqui](alexandredsantos01.github.io/MeuPortfolio/).
+
