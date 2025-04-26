@@ -20,5 +20,5 @@ Este é um projeto de um sistema CRUD (Criar, Ler, Atualizar, Excluir) para gere
 
 - ## Mais Projetos
 
-Veja mais projetos desenvolvidos em meu portfólio [aqui](alexandredsantos01.github.io/MeuPortfolio/).
+Veja mais projetos desenvolvidos em meu portfólio [aqui](https://alexandredsantos01.github.io/MeuPortfolio/#sobre).
 
